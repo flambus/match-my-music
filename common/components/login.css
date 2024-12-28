@@ -1,0 +1,85 @@
+img {
+    display: flex; /* Block-Element, um margin auto zu verwenden */
+    margin: 0 auto; /* Zentriert das Bild horizontal */
+    position: relative; /* Ermöglicht die Verwendung von left */
+    height: 50px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh; /* Vertikal zentrieren */
+    box-sizing: border-box;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px; /* Begrenzen Sie die Breite */
+    position: relative;
+}
+
+input{
+    width: 100%; /* Begrenzen Sie die Breite */
+    padding: 15px;
+    margin: 0px;
+    background-color: #f0f0f0;
+    border: 2px solid #f3f3f3;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:hover{
+    box-shadow: 12px 12px 12px rgba(92, 3, 119, 0.2);
+}
+
+input:valid, input:invalid {
+    border: 2px solid #f3f3f3;
+}
+
+input:valid {
+    color: #000;
+}
+
+input::placeholder {
+    color: #bbb;
+    font-size: 14px;
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+    border-color: red;
+}
+
+h2 {
+    margin-top: 20px;	
+
+}
+
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

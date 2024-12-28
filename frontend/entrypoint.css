@@ -1,0 +1,74 @@
+/**
+ * Global style definitions
+ */
+
+.hello-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+
+    section {
+        padding: 20px;
+        margin: 10px;
+        background: var(--bg-content);
+        border-radius: 10px;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff !important; /* Hintergrundfarbe auf weiß ändern */
+    display: flex; /* Flexbox für Layout */
+    flex-direction: column; /* Inhalt untereinander anordnen */
+    justify-content: center; /* Vertikale Zentrierung */
+    height: 100vh; /* Bildschirmhöhe */
+    padding: 0 15px; 
+    box-sizing: border-box; 
+}
+
+.NextButton{
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* Button nach rechts verschieben */
+    margin-top: 20px;
+}
+
+.NextButton::after {
+    margin-top: 100px;
+    content: "    →"; /* Pfeil hinzufügen */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.BackButton:hover,
+.NextButton:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.BackButton{
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-right: auto; /* Button nach links verschieben */
+    margin-top: 20px;
+}
+
+.BackButton::before {
+    margin-top: 100px;
+    content: "←    "; /* Pfeil hinzufügen */
+    font-size: 16px;
+    font-weight: bold;
+}

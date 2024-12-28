@@ -1,0 +1,130 @@
+img {
+    display: flex; /* Block-Element, um margin auto zu verwenden */
+    margin: 0 auto; /* Zentriert das Bild horizontal */
+    position: relative; /* Ermöglicht die Verwendung von left */
+    height: 50px;
+}
+
+
+form {
+    width: 100%; /* Formular füllt Breite des Containers */
+    display: flex; /* Flexbox im Formular */
+    justify-content: center; /* Zentriere das Formular */
+}
+
+.form-group {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+    
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #f3f3f3;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    
+}
+
+input:hover, select:hover {
+    box-shadow: 12px 12px 12px rgba(92, 3, 119, 0.2);
+}
+
+input:valid, input:invalid {
+    border: 2px solid #f3f3f3;
+}
+
+input:valid{
+    color:#000;
+}
+
+.NextButton:hover {
+    color:blueviolet;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: #bbb;
+    font-size: 14px;
+}
+
+#gender {
+    color: #bbb; /* Placeholder-Farbe */
+}
+
+#gender:valid {
+    color: #000; /* Normale Textfarbe */
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+    border-color: red;
+}
+
+@keyframes notes {
+    0% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2) translateY(-100px);
+    }
+}
+.note {
+    position: absolute;
+    font-size: 20px;
+    animation: notes 1s ease-out;
+    color: blueviolet;
+}
+
+.note-container {
+    position: relative; /* Ermöglicht absolute Positionierung der Noten */
+    display: flex; /* Passt sich an die Größe des Bildes an */
+    align-items: center; /* Vertikal zentrieren */
+    justify-content: center;
+}
+
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
