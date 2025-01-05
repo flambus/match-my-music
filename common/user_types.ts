@@ -1,13 +1,13 @@
 export type User = {
 	user_id: string;
 	first_name: string;
-	gender: string;
-	birthday: Date;
-	location: GeoLocation;
+	gender?: string;
+	birthday: Date | null;
+	location: GeoLocation | null;
 	spotify_user: SpotifyUser | null;
 	user_profile: UserProfile | null;
-	email: string;
-	password_hash: passwordHash;
+	email: string | null;
+	password_hash: passwordHash | null;
 	endpoint_id: string;
 };
 

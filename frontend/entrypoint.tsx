@@ -9,11 +9,13 @@ import { GenreSelector } from "../common/components/userProfile/genreSelector.ts
 import { GenderPreferenceSelector } from "../common/components/userProfile/genderPreferenceSelector.tsx";
 import { Routes } from "common/routes.ts";
 
-import { Chats } from "backend/chat.ts";
+import { Chat, Chats } from "backend/chat.ts";
 import { UserRelationships } from "backend/relationships.ts";
 import { ChatPage } from "common/components/ChatPage.tsx";
 import { Overview } from '../common/components/Overview.tsx';
 import { LikeOverview } from '../common/components/LikeOverview.tsx';
+
+import { Datex } from "datex-core-legacy/datex.ts";
 
 export default {
 
@@ -28,14 +30,15 @@ export default {
 
 	'/chats': async () => <Overview chats={await Chats.getChats()}/>,
 	'/likes': async () => <LikeOverview items={await UserRelationships.getUserRelationships("their-likes")}/>,
-	'*': async (ctx) => {
+	'*': async (ctx: any) => {
 		const id = decodeURIComponent(ctx.path).slice(1);
 		console.log(id)
 		try {
 			const chat = await Chats.getChat(id ?? "unyt");
 			if (!chat)
 				throw new Error("Chat not found!");
-			return chat ? <ChatPage chat={chat}/> : <></> // render the chat component //<ChatPage chat={chat}/>
+		const chatRef = $(chat); // Ensure chat is now of type ObjectRef<Chat>
+		return <ChatPage chat={chatRef} />;
 		} catch (error) {
 			console.error(error);
 			return (

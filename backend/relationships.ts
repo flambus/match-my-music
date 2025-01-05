@@ -41,7 +41,7 @@ export class Likes {
 
 	static async addLike(like_user_id: number): Promise<Like> {
 		const like = $({
-			user_id: like_user_id
+			user_id: like_user_id?.toString()
 		});
 		likes.push(like);
 		return like;
@@ -57,7 +57,7 @@ export class LikesFrom {
 
 	static async addLikeFrom(like_user_id: number): Promise<LikeFrom> {
 		const like = $({
-			user_id: like_user_id
+			user_id: like_user_id?.toString()
 		});
 		likesFrom.push(like);
 		return like;
@@ -73,10 +73,10 @@ export class Matches {
 
 	static async addMatch(match_user_id: number): Promise<Match> {
 		const match = $({
-			user_id: match_user_id
+			user_id: match_user_id?.toString()
 		});
 		const likes_arr = Array.from(likes);
-		const liked_user = likes_arr.find(e => e.user_id == match_user_id);
+		const liked_user = likes_arr.find(e => e.user_id == match_user_id?.toString());
 		matches.push(match);
 		if (liked_user) {
 			const like_user_index = likes.indexOf(liked_user);
