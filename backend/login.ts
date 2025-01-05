@@ -14,7 +14,7 @@ export async function login(email: string, password: string) {
     const all_users = Array.from(users);
     const user = all_users.find(user => user.email === email) as User
     
-    if(user){
+    if(user && user.password_hash){
         if (await checkPasswordIsEqual(password, user.password_hash) == true){
             await saveUser(session, user); //save the user in private data
             return true;

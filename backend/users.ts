@@ -35,7 +35,7 @@ export function addUser(user: User) {
 export function hashPassword(password: string): passwordHash {
     const salt = hash.genSalt(8, 'string');
 
-    return { hash: hash.hash(password, {salt: salt}), salt: salt };
+    return { hash: hash.hash(password, {salt: salt}), salt: salt?.toString() };
 }
 
 /**

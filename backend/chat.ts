@@ -62,12 +62,22 @@ export class Chats {
 			messages: $([])
 		});
 		chats.push(chat);
-		const uid = (Math.random() * 1000)
+		const uid = String((Math.random() * 1000))
 		const user = $({
-			user_id: uid,
-			name: endpointId.slice(2, 5),
-			endpoint_id: endpointId
-		})
+			user_id: uid,                          // From your existing variable
+			first_name: endpointId.slice(2, 5),    // Placeholder for first_name
+			gender: "unknown",                     // Set a default or get from the source
+			birthday: null,                  // Default to current date or specify
+			location: {                            // Replace with actual GeoLocation data
+				lat: 0,
+				lon: 0,
+			},
+			spotify_user: null,                    // Default to null if no Spotify data
+			user_profile: null,                    // Default to null if no profile data
+			email: null,           // Generate or retrieve email
+			password_hash: null,  // Replace with hashed password
+			endpoint_id: endpointId                // From your existing variable
+		});
 		addUser(user);
 		Likes.addLike(Number(uid));
 		LikesFrom.addLikeFrom(Number(uid));
